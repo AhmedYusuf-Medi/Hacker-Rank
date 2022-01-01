@@ -1,0 +1,3 @@
+SELECT employee.Name
+FROM Employee AS employee
+ORDER BY employee.Name;

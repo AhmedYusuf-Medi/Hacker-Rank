@@ -1,0 +1,2 @@
+SELECT ROUND((MAX(station.lat_n) - MIN(station.lat_n)) + (MAX(station.long_w) - MIN(station.long_w)), 4) 
+FROM STATION AS station;

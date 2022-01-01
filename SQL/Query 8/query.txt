@@ -1,0 +1,3 @@
+SELECT DISTINCT station.CITY
+FROM STATION AS station
+WHERE station.ID % 2 = 0;

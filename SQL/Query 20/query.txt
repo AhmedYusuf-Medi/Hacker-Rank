@@ -1,0 +1,4 @@
+SELECT employee.Name
+FROM Employee AS employee
+WHERE employee.Salary > 2000 AND employee.Months < 10
+ORDER BY employee.employee_id ASC;

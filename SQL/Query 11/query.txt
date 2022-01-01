@@ -1,0 +1,18 @@
+Variant A - MS SQL Server
+SELECT DISTINCT station.CITY
+FROM STATION AS station
+WHERE station.CITY LIKE ('a%') OR
+station.CITY LIKE ('e%') OR
+station.CITY LIKE ('i%') OR 
+station.CITY LIKE ('o%') OR 
+station.CITY LIKE ('u%');
+
+Variant B - MS SQL Server
+SELECT DISTINCT station.CITY 
+FROM STATION AS station 
+WHERE station.CITY LIKE '[a, e, i, o, u]%';
+
+Variant C - MySQL
+SELECT DISTINCT station.CITY
+FROM STATION AS station
+WHERE station.CITY REGEXP "^[aeiou].*";

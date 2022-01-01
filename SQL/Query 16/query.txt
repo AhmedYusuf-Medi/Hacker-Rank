@@ -1,0 +1,4 @@
+SELECT DISTINCT station.CITY 
+FROM STATION AS station 
+WHERE LOWER(station.CITY) NOT LIKE '%[a, e, i, o, u]' OR
+LOWER(station.CITY) NOT LIKE '[a, e, i, o, u]%';

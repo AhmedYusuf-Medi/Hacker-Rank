@@ -1,0 +1,2 @@
+SET @rows = 21;
+SELECT REPEAT('* ', @rows := @rows - 1) FROM information_schema.TABLES;

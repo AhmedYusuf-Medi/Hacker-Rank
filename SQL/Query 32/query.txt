@@ -1,0 +1,4 @@
+SELECT ROUND(station.LONG_W, 4) 
+FROM STATION AS station
+WHERE station.LAT_N < 137.2345 
+ORDER BY station.LAT_N DESC LIMIT 1;

@@ -1,0 +1,2 @@
+SELECT city.ID, city.NAME, city.COUNTRYCODE, city.DISTRICT, city.POPULATION
+FROM CITY AS city;

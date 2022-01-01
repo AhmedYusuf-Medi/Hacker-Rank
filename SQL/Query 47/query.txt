@@ -1,0 +1,10 @@
+SELECT CASE
+    WHEN node.P IS NULL THEN CONCAT(node.N, ' Root')
+    WHEN node.N IN 
+    (
+        SELECT DISTINCT node.P FROM BST AS node) THEN CONCAT(node.N, ' Inner'
+    )
+    ELSE CONCAT(node.N, ' Leaf')
+    END
+FROM BST AS node
+ORDER BY node.N ASC;

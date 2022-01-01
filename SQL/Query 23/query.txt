@@ -1,0 +1,19 @@
+VARIANT A 
+SELECT hacker.hacker_id, hacker.name 
+FROM HACKERS AS hacker, CHALLENGES AS challenge, DIFFICULTY AS diffuculty, SUBMISSIONS AS submission 
+WHERE hacker.hacker_id = submission.hacker_id
+AND challenge.challenge_id = submission.challenge_id
+AND challenge.difficulty_level = diffuculty.difficulty_level
+AND submission.score = diffuculty.score
+GROUP BY hacker.hacker_id, hacker.name HAVING COUNT(hacker.hacker_id) > 1
+ORDER BY COUNT(challenge.challenge_id) DESC, hacker.hacker_id
+
+VARIANT B
+SELECT hacker.hacker_id, hacker.name 
+FROM SUBMISSIONS AS submission 
+JOIN CHALLENGES AS challenges ON submission.challenge_id = challenges.challenge_id 
+JOIN DIFFICULTY AS difficulty ON challenges.difficulty_level = difficulty.difficulty_level 
+JOIN HACKERS AS hacker ON submission.hacker_id = hacker.hacker_id 
+WHERE submission.score = difficulty.score AND challenges.difficulty_level = difficulty.difficulty_level 
+GROUP BY hacker.hacker_id, hacker.name HAVING COUNT(submission.hacker_id) > 1 
+ORDER BY COUNT(submission.hacker_id) DESC, hacker.hacker_id ASC;

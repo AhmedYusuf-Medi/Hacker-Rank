@@ -1,0 +1,9 @@
+SELECT company.company_code, company.founder, 
+    COUNT(DISTINCT employee.lead_manager_code), 
+    COUNT(DISTINCT employee.senior_manager_code), 
+    COUNT(DISTINCT employee.manager_code), 
+    COUNT(DISTINCT employee.employee_code)
+FROM Company AS company
+JOIN Employee AS employee ON employee.company_code = company.company_code
+GROUP BY company.company_code, company.founder
+ORDER BY company.company_code;

@@ -1,0 +1,11 @@
+SELECT student.Name, grade.Grade, student.Marks 
+FROM STUDENTS AS student
+INNER JOIN GRADES AS grade ON student.Marks BETWEEN grade.Min_Mark AND Max_Mark 
+WHERE grade.Grade > 7
+ORDER BY grade.Grade DESC, student.Name ASC;
+
+SELECT null, grade.Grade, student.Marks 
+FROM STUDENTS AS student
+INNER JOIN GRADES AS grade ON student.Marks BETWEEN grade.Min_Mark AND Max_Mark
+WHERE grade.Grade <= 7 
+ORDER BY grade.Grade DESC, student.Marks ASC;

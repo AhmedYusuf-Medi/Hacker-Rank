@@ -1,0 +1,4 @@
+SELECT DISTINCT station.CITY 
+FROM STATION AS station 
+WHERE station.CITY LIKE '%[a, e, i, o, u]' AND
+station.CITY LIKE '[a, e, i, o, u]%';

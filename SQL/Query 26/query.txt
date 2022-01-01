@@ -1,0 +1,4 @@
+SELECT AVG(city.POPULATION)
+FROM CITY AS city
+WHERE city.DISTRICT = 'California'
+GROUP BY city.DISTRICT;

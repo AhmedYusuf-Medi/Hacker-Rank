@@ -1,0 +1,2 @@
+SELECT station.CITY, station.STATE
+FROM STATION AS station;

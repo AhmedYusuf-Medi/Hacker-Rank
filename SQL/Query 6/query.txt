@@ -1,0 +1,3 @@
+SELECT city.NAME
+FROM CITY AS city
+WHERE city.COUNTRYCODE = 'JPN';

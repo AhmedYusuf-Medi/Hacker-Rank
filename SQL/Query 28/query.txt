@@ -1,0 +1,5 @@
+SELECT (employee.Salary * employee.Months) AS Earnings, COUNT(employee.employee_id)
+FROM EMPLOYEE AS employee 
+GROUP BY Earnings
+ORDER BY Earnings DESC 
+LIMIT 1;
